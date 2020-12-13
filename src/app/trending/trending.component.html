@@ -1,0 +1,20 @@
+<div class="gif-container">
+  <mat-card  style="width: 20rem;" class="gif-thumbnail" id="gif-thumbnail" *ngFor="let item of gifs.data "  >
+   
+   <img  height="300px" [routerLink]="['/comment']" src="{{item.images.original.url}}" class="card-img-top" alt="...">
+   <!-- <mat-card-header>
+      <mat-card-title id="book-title">
+        <h6>{{item.title}}</h6>
+      </mat-card-title>
+      <mat-card-subtitle>id: {{item.id}}</mat-card-subtitle> 
+    </mat-card-header> -->
+
+    <mat-card-actions  style="float:left;">
+          <button  class="btn btn-primary" style="margin-left: 9px" mat-button (click) = recommendGifs(item)>Recommend</button>
+          <button class="btn btn-primary" style="margin-left: 10px" mat-button (click) = favoriteGifs(item)>Favorite </button>
+          <button class="btn"  (click) = downloadGif(item.images.original.url) ><i class="fa fa-download fa-sm" aria-hidden="true"style="font-size: 0.73em;"></i> </button>
+      
+    </mat-card-actions>
+
+  </mat-card>
+</div>
